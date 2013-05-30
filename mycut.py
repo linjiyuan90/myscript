@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 
+'''
+  cut command seems can't deal with situation where delimiters are also inside
+  the field, such as: abc,"def,ghi",jk (the comma inside the double quote
+  should not be split)
+  
+  This simple script simply fix this bug by combining neighbor fields.
+'''
+
 USAGE = \
 '''Usage: python3 mycut.py file delimiters fields
 fields looks like: 1-3,4-5,7, and it start from 1'''
