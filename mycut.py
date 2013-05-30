@@ -32,7 +32,8 @@ def cut_fields(fields, delimiters, lines):
   out_lines = []
   num_fields = None  # set it as first line's num of fields
   for (ix, line) in enumerate(lines):
-    if not line.strip():  # ignore empty line
+    line = line.strip()
+    if not line:  # ignore empty line
       continue
     line = line.split(delimiters)
     # chars in string should not be treat as delimiters
